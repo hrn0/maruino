@@ -33,6 +33,12 @@
   </head>
   <body>
     <div id="text"></div>
+        
+<audio id="DiceSound" preload="auto">
+<source src="kirakira.mp3" type="audio/mp3">
+<source src="kirakira.wav" type="audio/wav">
+</audio>
+
     <script type="text/javascript">
     for (var i = 0; i < 1; i++) {
       const cici = document.createElement('div');
@@ -40,9 +46,15 @@
       cici.style.height = '50px';
       cici.style.width = '50px';
       text.textContent = '...';
+      
+      function ring() {
+　　document.getElementById("DiceSound").play();
+	}
 
       var tup = 0;
       cici.addEventListener('click',function(){
+      	ring();
+      	
         text.textContent = 'わーい！';
         tup = tup+2;
         if (tup>10 && 15>tup){
@@ -79,6 +91,7 @@
 
       document.body.appendChild(cici);
     }
+
     </script>
   </body>
 </html>
