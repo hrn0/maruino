@@ -66,6 +66,8 @@
 
       var cicido = function(){
         var hw = Math.random()*60+30+tup;
+        //var op = Math.random()*10/10;
+        //cici.style.opacity = `${op}`;
         cici.style.height = `${hw}px`;
         cici.style.width = `${hw}px`;
         cici.style.transition = `0.5s`;
@@ -82,9 +84,8 @@
 
     var cicido2 = function(){
       var color = Math.random()*360;
-      cici.style.transition = `5s`;
-      cici.style.webkitFilter = `hue-rotate(${color}deg)`;
-      cici.style.webkitFilter = `blur(2px)`;
+      cici.style.transition = `9s`;
+      cici.style.webkitFilter = `hue-rotate(${color}deg) blur(2px)`;
     }
     setInterval(cicido2,2000);
 
