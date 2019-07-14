@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>まるいの</title>
+    <meta name="theme-color" content="#000">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, user-scalable=no" />
+    <style media="screen">
+    body{
+      background: #000;
+    }
+    .cicss{
+        /* height: 50px;
+        width: 50px; */
+        background: #fff;
+        border-radius: 50%;
+        margin: 300px auto;
+        box-shadow: 0 0 30px hotpink inset,
+                    0 0 30px hotpink;
+        /* border: 1px solid hotpink; */
+        filter: blur(2px);
+    }
+    #text{
+      color: #fff;
+      font-size: 30px;
+      /* position: absolute; */
+      margin-top: 20px;
+      text-align: center;
+      font-family: 'Small Fonts';
+      user-select: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="text"></div>
+        
+<audio id="DiceSound" preload="auto">
+<source src="pito.cut.mp3" type="audio/mp3">
+</audio>
+
+    <script type="text/javascript">
+    for (var i = 0; i < 1; i++) {
+      const cici = document.createElement('div');
+      cici.classList.add('cicss');
+      cici.style.height = '50px';
+      cici.style.width = '50px';
+      text.textContent = '';
+      
+      function ring() {
+　　document.getElementById("DiceSound").play();
+	}
+
+      var tup = 0;
+      cici.addEventListener('click',function(){
+      	ring();
+      	
+        text.textContent = '';
+        tup = tup+2;
+        if (tup>10 && 15>tup){
+          text.textContent = '';
+        }else if(tup>=15){
+          var old = Math.floor((tup-5)/10);
+          text.textContent = ``;
+        }
+      })
+
+      var cicido = function(){
+        var hw = Math.random()*60+30+tup;
+        //var op = Math.random()*10/10;
+        //cici.style.opacity = `${op}`;
+        cici.style.height = `${hw}px`;
+        cici.style.width = `${hw}px`;
+        cici.style.transition = `0.5s`;
+        // var y = Math.sin(Math.PI / 2);
+        // var x = Math.cos(0);
+        // var a = Math.tan(Math.PI / 4);
+        // x
+        // cici.style.height = `${y}px`;
+        // cici.style.width = `${y}px`;
+        var ma = 300-(hw*0.5);
+        cici.style.marginTop = `${ma}px`;
+    }
+    setInterval(cicido,250);
+
+    var cicido2 = function(){
+      var color = Math.random()*360;
+      cici.style.transition = `9s`;
+      cici.style.webkitFilter = `hue-rotate(${color}deg) blur(2px)`;
+    }
+    setInterval(cicido2,2000);
+
+      document.body.appendChild(cici);
+    }
+
+    </script>
+  </body>
+</html>
